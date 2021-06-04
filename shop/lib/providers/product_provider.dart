@@ -67,8 +67,8 @@ class Products with ChangeNotifier {
   void updateProduct (String prodId, Product newProduct) {
     var productId = _items.indexWhere((prod) => prod.id == prodId);
     if (productId != null) {
-    _items[productId] = newProduct;
-    notifyListeners();
+      _items[productId] = newProduct;
+      notifyListeners();
     }
   }
 

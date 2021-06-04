@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+// you can write to stdout for debugging purposes, e.g.
+// console.log('this is a debug message');
+
+function solution(A) {
+    // write your code in JavaScript (Node.js 8.9.4)
+    let ans
+    let newArray = []
+    for(let i = Math.min(...A); i <= Math.max(...A); i++) {
+        for(let j = 0; j < A.length; j++) {
+            if (A.indexOf(i) < 0 && i < A[j]) {
+              newArray.push(i)
+            }
+        }
+    }
+    if (newArray.length !== 0) {
+     ans = Math.min(...newArray)
+    } else {
+      ans = Math.min(...A) - 1
+    }
+    console.log('Answer,', ans)
+    return ans
+}
+
+console.log(solution([-1,-2,-3,6,10]))
+  </script>
+</body>
+</html>
